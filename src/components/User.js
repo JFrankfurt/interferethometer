@@ -25,7 +25,8 @@ const styles = {
     borderRadius: '50%',
   },
   name: {
-    fontSize: '3.5em'
+    fontSize: '3em',
+    weight: 300,
   }
 }
 

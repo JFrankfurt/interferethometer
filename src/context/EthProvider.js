@@ -16,16 +16,14 @@ export default class EthProvider extends Component {
       typeof window.web3.currentProvider !== 'undefined'
     ) {
       this.eth = new Eth(window.web3.currentProvider, ethOptions)
-    } else {
-      this.eth = new Eth(
-        new Eth.HttpProvider('http://localhost:8545'),
-        ethOptions
-      )
     }
     window.eth = this.eth
-    this.gravity = new Gravity(this.eth)
-    const users = await this.gravity.getUsers()
-    this.setState({loading: false, users: Object.values(users).reverse()})
+    if (this.eth) {
+      this.gravity = new Gravity(this.eth)
+      const users = await this.gravity.getUsers()
+      this.setState({users: Object.values(users).reverse()})
+    }
+    this.setState({loading: false})
   }
 
   render() {
@@ -35,9 +33,15 @@ export default class EthProvider extends Component {
         gravity: this.gravity,
         users: this.state.users
       }}>
-        {this.state.loading
-          ? <div>loading...</div>
-          : this.props.children}
+        {!this.eth && !this.state.loading
+          ? <a href="https://metamask.io/"
+               style={{color: 'white'}}
+               target="_blank" rel="noopener noreferrer">
+            Come back once you have MetaMask!
+          </a>
+          : this.state.loading
+            ? <div>Loading Gravity...</div>
+            : this.props.children}
       </EthContext.Provider>
     )
   }
