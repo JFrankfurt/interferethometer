@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/jfrankfurt/interferethometer#readme",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
     "ethereum-identicon": "^0.0.4",
     "ethjs": "^0.4.0",
@@ -34,7 +35,6 @@
     "ethjs-contract": "^0.2.3",
     "ethjs-query": "^0.3.8",
     "express": "^4.16.3",
-    "node-fetch": "^2.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
@@ -51,7 +51,6 @@
     "babel-loader": "^8.0.0-beta.4",
     "clean-webpack-plugin": "^0.1.19",
     "core-js": "^2.5.7",
-    "cross-env": "^5.2.0",
     "eslint": "^5.2.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-babel": "^5.1.0",
