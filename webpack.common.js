@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({title: 'react-node-template', template: './src/app/index.html'}),
+    new HtmlWebpackPlugin({title: 'interferethometer', template: './src/app/index.html'}),
     new FaviconsWebpackPlugin({
       logo: './src/app/static/favicon.png',
       prefix: 'icons-[hash]/',

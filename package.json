@@ -1,5 +1,5 @@
 {
-  "name": "react-node-template",
+  "name": "interferethometer",
   "version": "1.0.0",
   "description": "",
   "main": "src/server/index.js",
@@ -13,33 +13,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfrankfurt/react-node-template.git"
+    "url": "git+https://github.com/jfrankfurt/interferethometer.git"
   },
   "author": "Jordan Frankfurt <jordanwfrankfurt@gmail.com> (https://github.com/jfrankfurt)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jfrankfurt/react-node-template/issues"
+    "url": "https://github.com/jfrankfurt/interferethometer/issues"
   },
-  "homepage": "https://github.com/jfrankfurt/react-node-template#readme",
+  "homepage": "https://github.com/jfrankfurt/interferethometer#readme",
   "dependencies": {
+    "ethereum-identicon": "^0.0.4",
+    "ethjs": "^0.4.0",
+    "ethjs-abi": "^0.2.1",
+    "ethjs-contract": "^0.2.3",
+    "ethjs-query": "^0.3.8",
     "express": "^4.16.3",
     "node-fetch": "^2.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
-    "react-jss": "^8.6.1",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "redux-devtools-extension": "^2.13.5"
+    "react-jss": "^8.6.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.54",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.54",
-    "@babel/polyfill": "^7.0.0-beta.54",
-    "@babel/preset-env": "^7.0.0-beta.54",
-    "@babel/preset-react": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-rc.1",
+    "@babel/polyfill": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
     "babel-eslint": "^9.0.0-beta.3",
     "babel-loader": "^8.0.0-beta.4",
     "clean-webpack-plugin": "^0.1.19",
@@ -53,7 +54,6 @@
     "eslint-plugin-react": "^7.10.0",
     "favicons-webpack-plugin": "^0.0.9",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^23.4.1",
     "rimraf": "^2.6.2",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
