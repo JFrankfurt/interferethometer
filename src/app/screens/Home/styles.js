@@ -2,7 +2,14 @@
 
 export const styles = {
   root: {
-    margin: '20px 0 0 20px'
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: 20,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0
   },
   input: {
     width: 375,

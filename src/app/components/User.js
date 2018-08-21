@@ -6,12 +6,13 @@ const imageSize = 150
 
 const styles = {
   root: {
-    margin: '20px 0',
+    alignItems: 'center',
     display: 'grid',
     gridGap: 12,
-    alignItems: 'center',
     gridTemplateRows: `${imageSize / 2}px ${imageSize / 2}px`,
     gridTemplateColumns: `${imageSize + 20}px auto`,
+    margin: '20px 0',
+    minWidth: 400,
   },
   etherscanLink: {
     color: 'inherit',
@@ -24,7 +25,7 @@ const styles = {
     borderRadius: '50%',
   },
   name: {
-    fontSize: '3em'
+    fontSize: '3.5em'
   }
 }
 

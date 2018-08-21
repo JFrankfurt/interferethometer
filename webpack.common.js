@@ -1,12 +1,9 @@
 const {resolve} = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-console.log('outputting webpack build to: ', resolve(__dirname, 'dist'))
-
 module.exports = {
   entry: {
     app: [
-      'webpack-hot-middleware/client',
       './src/app/index.js'
     ]
   },

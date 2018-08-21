@@ -12,9 +12,7 @@
     "clean": "rimraf dist",
     "lint": "eslint src",
     "dev": "cross-env NODE_ENV=development node ./src/server/index.js",
-    "start": "cross-env NODE_ENV=production node ./src/server/index.js",
-    "test": "jest",
-    "heroku-postbuild": "yarn start"
+    "start": "yarn build && cross-env NODE_ENV=production node ./src/server/index.js"
   },
   "repository": {
     "type": "git",
