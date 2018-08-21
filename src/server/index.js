@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const {resolve} = require('path')
 const webpack = require('webpack')
@@ -8,7 +9,7 @@ const prod = require('../../webpack.prod')
 
 
 let config = process.env.NODE_ENV === 'production' ? prod : dev
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 const compiler = webpack(config)
 const app = express()
