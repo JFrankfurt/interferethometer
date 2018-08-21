@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/server/index.js",
   "engines": {
+    "node": "10.8.0",
     "yarn": "1.7.0"
   },
   "scripts": {
