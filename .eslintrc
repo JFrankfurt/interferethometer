@@ -11,6 +11,12 @@
       "jsx": true
     }
   },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "15.4.2"
+    }
+  },
   "env": {
     "es6": true,
     "browser": true,

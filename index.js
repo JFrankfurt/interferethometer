@@ -4,8 +4,8 @@ const {resolve} = require('path')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const hmr = require('webpack-hot-middleware')
-const dev = require('../../webpack.dev')
-const prod = require('../../webpack.prod')
+const dev = require('./webpack.dev')
+const prod = require('./webpack.prod')
 
 
 let config = process.env.NODE_ENV === 'production' ? prod : dev

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     app: [
-      './src/app/index.js'
+      './src/index.js'
     ]
   },
   module: {
@@ -25,7 +25,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({title: 'interferethometer', template: './src/app/index.html'}),
+    new HtmlWebpackPlugin({title: 'interferethometer', template: './src/index.html'}),
   ],
   output: {
     filename: '[name].[hash].bundle.js',
