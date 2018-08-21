@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server/index.js",
-  "engines": {
-    "node": "^10.8.0",
-    "yarn": "^1.9.4"
-  },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "clean": "rimraf dist",
