@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/server/index.js",
   "engines": {
-    "node": "10.8.0",
-    "yarn": "1.9.1"
+    "node": "^10.8.0",
+    "yarn": "^1.9.4"
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -36,9 +36,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
-    "react-jss": "^8.6.1"
-  },
-  "devDependencies": {
+    "react-jss": "^8.6.1",
     "@babel/core": "^7.0.0-rc.1",
     "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-rc.1",
