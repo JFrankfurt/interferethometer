@@ -9,7 +9,7 @@ const prod = require('../../webpack.prod')
 
 
 let config = process.env.NODE_ENV === 'production' ? prod : dev
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 const compiler = webpack(config)
 const app = express()
