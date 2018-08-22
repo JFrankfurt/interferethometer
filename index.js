@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const {existsSync} = require('fs')
-const {join, resolve} = require('path')
+const {join} = require('path')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const dev = require('./webpack.dev')
