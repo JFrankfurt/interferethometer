@@ -1,26 +1,41 @@
 require('dotenv').config()
 const express = require('express')
-const {resolve} = require('path')
+const {existsSync} = require('fs')
+const {join, resolve} = require('path')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
-const hmr = require('webpack-hot-middleware')
 const dev = require('./webpack.dev')
 const prod = require('./webpack.prod')
 
+const isDev = process.env.NODE_ENV === 'development'
+const config = isDev ? dev : prod
+const DIST_DIR = join(__dirname, 'dist')
+const HTML_FILE = join(DIST_DIR, 'index.html')
+const DEFAULT_PORT = 3000
 
-let config = process.env.NODE_ENV === 'development' ? dev : prod
-const port = process.env.PORT || 3000
-
-const compiler = webpack(config)
 const app = express()
-if (process.env.NODE_ENV === 'development') {
+app.set('port', process.env.PORT || DEFAULT_PORT)
+
+if (isDev || !existsSync(DIST_DIR)) {
+  const compiler = webpack(config)
   app
-    .use(hmr(compiler))
+    .use(webpackDevMiddleware(compiler, {
+      noInfo: true,
+      publicPath: config.output.publicPath
+    }))
+    .get('*', (req, res, next) => {
+      compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
+        if (err) {
+          return next(err)
+        }
+        res.set('content-type', 'text/html')
+        res.send(result)
+        res.end()
+      })
+    })
+} else {
+  app.use(express.static(DIST_DIR))
+  app.get('*', (req, res) => res.sendFile(HTML_FILE))
 }
-app
-  .use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: config.output.publicPath
-  }))
-  .use('/*', express.static(resolve(`${__dirname}/index.html`)))
-  .listen(port, () => console.log(`Example app listening on port: ${port}!`))
+
+app.listen(app.get('port'))
